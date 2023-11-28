@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>{{ .title }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,13 +42,15 @@
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>{{ .title }}</h1>
-        <form action="/check" method="post">
-            <label for="url">Enter Website URL:</label>
-            <input type="text" id="url" name="url" placeholder="https://www.example.com">
-            <input type="submit" value="Check Website">
+<body class="bg-gray-900 flex justify-center items-center h-screen">
+    <div class="w-full max-w-xs m-auto bg-gray-800 rounded-lg shadow-md p-5">
+        <h1 class="text-white text-3xl mb-5 text-center">{{ .title }}</h1>
+        <form action="/check" method="post" class="bg-gray-800">
+            <label for="url" class="block text-gray-500 mb-2 text-center">Enter Website URL:</label>
+            <input type="text" id="url" name="url" placeholder="https://www.example.com"
+                class="w-full p-3 mb-5 rounded text-gray-900">
+            <input type="submit" value="Check Website"
+                class="w-full bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline">
         </form>
     </div>
 </body>
