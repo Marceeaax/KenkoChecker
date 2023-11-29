@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>{{ .title }}</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
 
@@ -70,7 +71,7 @@
     <div class="scroll-bg"></div> <!-- Animated Background -->
     <div class="w-full max-w-xs m-auto bg-gray-800 rounded-lg shadow-md p-5">
         <h1 class="text-white text-3xl mb-5 text-center">{{ .title }}</h1>
-        <form action="/check" method="post" class="bg-gray-800">
+        <form id="statusCheckForm" class="bg-gray-800">
             <label for="url" class="block text-gray-500 mb-2 text-center">Enter Website URL:</label>
             <input type="text" id="url" name="url" placeholder="https://www.example.com"
                 class="w-full p-3 mb-5 rounded text-gray-900">
@@ -79,5 +80,39 @@
         </form>
     </div>
     </div>
+
+    <script>
+        document.getElementById('statusCheckForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const websiteURL = document.getElementById('url').value;
+            fetch('/check', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `url=${encodeURIComponent(websiteURL)}`
+            })
+// ...
+            .then(response => response.json()) // Handle JSON response
+            .then(data => {
+                Swal.fire({
+                    // title: 'Website Status',
+                    text: data.message,
+                    icon: data.status === 'success' ? 'success' : 'error',
+                    confirmButtonText: 'Ok'
+                });
+            })
+            // ...
+
+            .catch(error => {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Something went wrong, please try again later.',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -21,13 +21,22 @@ func main() {
 	// Handle form submission
 	r.POST("/check", func(c *gin.Context) {
 		websiteURL := c.PostForm("url") // Get URL from the form
-		if checkWebsite(websiteURL) {
-			c.String(http.StatusOK, "Website is up and running!")
-		} else {
-			c.String(http.StatusInternalServerError, "Website is down!")
-		}
-	})
 
+		// Prepare a JSON response
+		responseMessage := gin.H{
+			"status":  "success",
+			"message": "Website is up and running!",
+		}
+
+		if !checkWebsite(websiteURL) {
+			responseMessage["status"] = "error"
+			responseMessage["message"] = "Website is down!"
+			c.JSON(http.StatusInternalServerError, responseMessage) // Send JSON response
+			return
+		}
+
+		c.JSON(http.StatusOK, responseMessage) // Send JSON response
+	})
 	r.LoadHTMLGlob("templates/*")
 	r.Run(":8080")
 }
