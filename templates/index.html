@@ -29,6 +29,13 @@
             z-index: -1;
         }
 
+        .swal-dark-popup {
+            background-color: #333; /* Dark background for the popup */
+        }
+        .swal-dark-button {
+            background-color: #555; /* Darker button background */
+            color: white; /* White text for the button */
+        }
         body {
             font-family: Arial, sans-serif;
             background-color: #121212;
@@ -99,7 +106,12 @@
                     // title: 'Website Status',
                     text: data.message,
                     icon: data.status === 'success' ? 'success' : 'error',
-                    confirmButtonText: 'Ok'
+                    confirmButtonText: 'Ok',
+                    customClass: {
+                        popup: 'swal-dark-popup',
+                        confirmButton: 'swal-dark-button', // Add this if you also want to style the button
+                    },
+                    buttonsStyling: true,
                 });
             })
             // ...
