@@ -1,6 +1,6 @@
 # KenkoChecker 🌐
 
-![KenkoChecker Screenshot](https://github.com/Marceeaax/KenkoChecker/tree/main/images/preview.png "ウェブサイトのプレビュ")
+![KenkoChecker Screenshot](https://github.com/Marceeaax/KenkoChecker/blob/main/images/preview.png "ウェブサイトのプレビュ")
 
 This project is a simple web application that allows users to check the operational status of websites. It is built with the Go programming language, leveraging the Gin web framework, and it features a user interface with Tailwind CSS and SweetAlert for enhanced user experience.
 
