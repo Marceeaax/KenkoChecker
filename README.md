@@ -4,6 +4,8 @@
 
 <div align="center">ウェブサイトのプレビュ</div>
 
+
+
 This project is a simple web application that allows users to check the operational status of websites. It is built with the Go programming language, leveraging the Gin web framework, and it features a user interface with Tailwind CSS and SweetAlert for enhanced user experience.
 
 ## Prerequisites 📋
