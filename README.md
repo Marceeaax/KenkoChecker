@@ -1,4 +1,4 @@
-# KenkoChecker 🌐
+<div align="center"> # KenkoChecker 🌐 </div>
 
 ![KenkoChecker Screenshot](https://github.com/Marceeaax/KenkoChecker/blob/main/images/preview.png "ウェブサイトのプレビュ")
 
