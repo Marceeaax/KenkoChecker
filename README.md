@@ -1,4 +1,4 @@
-<div align="center"> KenkoChecker 🌐 </div>
+<h1 style="text-align: center;">Kenko Checker</h1>
 
 ![KenkoChecker Screenshot](https://github.com/Marceeaax/KenkoChecker/blob/main/images/preview.png "ウェブサイトのプレビュ")
 
