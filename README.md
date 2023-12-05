@@ -23,7 +23,7 @@ Follow these steps to get your development environment up and running:
    ```bash
    go run main.go
 
-Then open  `localhost:8080 ` to open the web application
+Then open  `localhost:8080` to open the web application. You can change the port in the `main.go` file
 
 ## Contributing 🤝
 
