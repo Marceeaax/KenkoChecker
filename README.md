@@ -15,5 +15,5 @@ Follow these steps to get your development environment up and running:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/website-status-checker.git
-   cd website-status-checker
+   git clone https://github.com/Marceeaax/KenkoChecker
+   cd KenkoChecker
